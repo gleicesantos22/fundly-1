@@ -1,3 +1,4 @@
+"use client"
 import { campaigns } from "@/lib/campaigns";
 import { ChartColumnIncreasing, HandHeart } from "lucide-react";
 import Image from "next/image";

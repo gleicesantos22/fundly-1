@@ -1,3 +1,4 @@
+"use client"
 import { Progress } from "@/components/ui/progress";
 import { campaigns } from "@/lib/campaigns";
 import Image from "next/image";

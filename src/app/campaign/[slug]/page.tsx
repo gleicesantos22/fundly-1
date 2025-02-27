@@ -9,6 +9,7 @@ import React from "react";
 import { useParams } from "next/navigation";
 import { campaigns } from "@/lib/campaigns";
 import { Navbar } from "@/components/navbar";
+import Link from "next/link";
 
 const FundraiserDetails = () => {
   const params = useParams();
@@ -44,9 +45,11 @@ const FundraiserDetails = () => {
               raisedAmount={campaignDetails.raised}
             />
           </div>
-          <Button className="w-full bg-black text-white lg:hidden">
-            Donate now
-          </Button>
+          <Link href={`/checkout/${campaignDetails.slug}`}>
+            <Button className="w-full bg-black text-white lg:hidden">
+              Donate now
+            </Button>
+          </Link>
           <Details campaignDetails={campaignDetails} />
         </div>
         <Features />

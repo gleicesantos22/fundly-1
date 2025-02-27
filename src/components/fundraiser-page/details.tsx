@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { campaigns } from "@/lib/campaigns";
 import { ShieldCheck } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export const Details = ({
@@ -63,9 +64,11 @@ export const Details = ({
               raisedAmount={campaignDetails.raised}
             />
           </div>
-          <Button className="w-full mt-5 bg-black text-white">
-            Donate now
-          </Button>
+          <Link href={`/checkout/${campaignDetails.slug}`}>
+            <Button className="w-full mt-5 bg-black text-white">
+              Donate now
+            </Button>
+          </Link>
           <Donations campaignDetails={campaignDetails} />
         </div>
       </div>

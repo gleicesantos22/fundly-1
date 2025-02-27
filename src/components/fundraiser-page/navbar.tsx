@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import { siteData } from "@/lib/site.config";
 import { Home } from "lucide-react";
@@ -7,7 +8,7 @@ import React from "react";
 
 export const Navbar = () => {
   return (
-    <nav className="px-4 w-full flex justify-center mb-5">
+    <nav className="bg-white px-4 w-full flex justify-center mb-5">
       <div className="justify-between items-center h-20 w-full container flex">
         <Link href="/" className="inline-flex gap-1 text-sm items-center underline">
           <Button size="sm" className="outline-none border-none shadow-none text-base flex items-center" variant="outline">

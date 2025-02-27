@@ -1,3 +1,4 @@
+"use client"
 import { Causes } from "@/components/causes";
 import { Footer } from "@/components/footer";
 import { Hero } from "@/components/hero";

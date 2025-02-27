@@ -4,15 +4,21 @@ import Link from "next/link";
 import React from "react";
 import { siteData } from "@/lib/site.config";
 
-export const Footer = () => {
+export const Footer = ({
+  hideSiteInfo = false,
+}: {
+  hideSiteInfo?: boolean;
+}) => {
   return (
     <footer className="w-full flex justify-center text-[#d0d0d0] bg-footerBackground pt-12 pb-2">
       <div>
         <div className="max-w-[1140px] flex flex-col gap-2 gap-y-10 justify-between mb-6 px-4 lg:flex-row">
-          <div className="flex flex-col gap-6 basis-full lg:basis-1/3">
-            <Image width={105} height={36} src={siteData.logo} alt="" />
-            <span>{siteData.description}</span>
-          </div>
+          {hideSiteInfo ? null : (
+            <div className="flex flex-col gap-6 basis-full lg:basis-1/3">
+              <Image width={105} height={36} src={siteData.logo} alt="" />
+              <span>{siteData.description}</span>
+            </div>
+          )}
           <div className="flex flex-col gap-2.5 basis-full lg:basis-1/3">
             <h4 className="text-[22px] font-semibold text-fundly-green">
               About Us

@@ -7,14 +7,29 @@ import React, { useState } from "react";
 
 export const Navbar = ({
   hideCampaigns,
+  centerLogo = false,
+  removeBlueBorder = false,
 }: {
   hideCampaigns?: boolean;
+  centerLogo?: boolean;
+  removeBlueBorder?: boolean;
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="z-50 fixed top-0 flex flex-col items-center w-full border-b-[16px] border-b-nav-blue bg-white p-5 px-2.5 md:px-0">
-      <div className="w-full max-w-[1140px] flex justify-between items-center">
-        <Link href="/">
+    <nav
+      className={`z-50 fixed top-0 flex flex-col items-center w-full bg-white p-5 px-2.5 md:px-0 ${
+        removeBlueBorder ? "" : "border-b-[16px] border-b-nav-blue"
+      }`}
+    >
+      <div
+        className={`w-full relative max-w-[1140px] flex items-center ${
+          centerLogo ? "justify-end" : "justify-between"
+        }`}
+      >
+        <Link
+          className={centerLogo ? "absolute left-1/2 -translate-x-1/2" : ""}
+          href="/"
+        >
           <Image width={105} height={36} src={siteData.logo} alt="" />
         </Link>
         <button
