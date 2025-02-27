@@ -1,7 +1,7 @@
 export const campaigns = [
   {
     slug: "so-done",
-    title: "YOUR Mission: SO DONE abschalten - Jetzt unterstützen!",
+    title: "Dev Dubai Mission: SO DONE abschalten - Jetzt unterstützen!",
     goal: 100000,
     raised: 50000,
     image: "/images/so_done.webp",
