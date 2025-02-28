@@ -17,7 +17,7 @@ export const Navbar = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav
-      className={`z-50 sticky top-0 flex flex-col items-center w-full bg-white shadow p-5 px-2.5 md:px-0 min-h-2`}
+      className={`z-50 sticky top-0 flex flex-col items-center w-full bg-white shadow p-5 px-2.5 md:px-0 min-h-[76px]`}
     >
       <div
         className={`w-full relative max-w-[1140px] flex items-center ${
