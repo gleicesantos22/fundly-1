@@ -45,7 +45,7 @@ const FundraiserDetails = () => {
               raisedAmount={campaignDetails.raised}
             />
           </div>
-          <Link href={`/checkout/${campaignDetails.slug}`}>
+          <Link className="w-full" href={`/checkout/${campaignDetails.slug}`}>
             <Button className="w-full bg-black text-white lg:hidden">
               Donate now
             </Button>

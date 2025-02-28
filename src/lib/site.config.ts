@@ -15,4 +15,6 @@ export const siteData = {
     { text: "Instagram", href: "", icon: Instagram },
     { text: "Pinterest", href: "", icon: LucideMessageSquare },
   ],
+  // add a new image in public > images folder and use the file name below - if filename is xyz.jpg then put "/images/xyz.jpg"
+  heroImage: "/images/banner-min.jpg",
 };
