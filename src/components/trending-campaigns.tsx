@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { Progress } from "@/components/ui/progress";
 import { campaigns } from "@/lib/campaigns";
 import Image from "next/image";
@@ -50,7 +50,7 @@ export const TrendingCampaigns = () => {
             <CampaignCard
               key={campaign.title + idx}
               {...campaign}
-              location={campaign.organizer.location}
+              // location={campaign.organizer.location}
             />
           ))}
         </div>
@@ -69,49 +69,44 @@ function CampaignCard({
   image,
   raised,
   goal,
-  location,
-  category,
+  // location,
+  // category,
   slug,
 }: {
   title: string;
   image: string;
   raised: number;
   goal: number;
-  location: string;
-  category: string;
+  // location: string;
+  // category: string;
   slug: string;
 }) {
   const progress = Math.ceil((raised * 100) / goal);
   return (
-    <article className="p-5 flex flex-col gap-6 bg-white basis-full lg:basis-1/3 shadow-[4px_4px_10px_0px_rgba(0,0,0,0.3)]">
-      <div className="flex flex-col gap-2">
-        <Image
-          className="rounded-lg"
-          width={720}
-          height={405}
-          alt=""
-          src={image}
-        />
-        <h6 className="text-[28px] font-semibold">{title}</h6>
-      </div>
-      <div className="flex gap-1 flex-col">
-        <div>
-          <Progress value={progress} />
+    <Link href={`/campaign/${slug}`}>
+      <article className="p-3 flex flex-col gap-3 bg-white basis-full rounded-lg lg:basis-1/3 hover:shadow-[4px_4px_10px_0px_rgba(0,0,0,0.3)]">
+        <div className="flex flex-col gap-2">
+          <Image
+            className="rounded-lg"
+            width={720}
+            height={405}
+            alt=""
+            src={image}
+          />
+          <h6 className="text-lg text-left font-semibold">{title}</h6>
         </div>
-        <div className="flex justify-between items-center">
-          <span className="text-[32px]">{`$${formatRaisedFund(raised)}`}</span>
-          <span className="text-base">{`${progress}%`}</span>
+        <div className="flex gap-2 flex-col">
+          <div>
+            <Progress value={progress} />
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-sm font-semibold">{`$${formatRaisedFund(
+              raised
+            )}`}</span>
+            <span className="text-sm">{`${progress}%`}</span>
+          </div>
         </div>
-        <div className="flex flex-col py-6">
-          <span>{location}</span>
-          <span>{category}</span>
-        </div>
-        <Link href={`/campaign/${slug}`}>
-          <button className="rounded-3xl p-4 py-1 mb-4 bg-fundly-green border-2 border-fundly-green hover:bg-transparent transition-colors duration-300 ease-in w-full flex justify-center text-[1.4rem]">
-            DONATE
-          </button>
-        </Link>
-      </div>
-    </article>
+      </article>
+    </Link>
   );
 }

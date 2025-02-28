@@ -8,18 +8,16 @@ import React, { useState } from "react";
 export const Navbar = ({
   hideCampaigns,
   centerLogo = false,
-  removeBlueBorder = false,
+  hideAll = false,
 }: {
   hideCampaigns?: boolean;
   centerLogo?: boolean;
-  removeBlueBorder?: boolean;
+  hideAll?: boolean;
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav
-      className={`z-50 fixed top-0 flex flex-col items-center w-full bg-white p-5 px-2.5 md:px-0 ${
-        removeBlueBorder ? "" : "border-b-[16px] border-b-nav-blue"
-      }`}
+      className={`z-50 sticky top-0 flex flex-col items-center w-full bg-white shadow p-5 px-2.5 md:px-0 min-h-2`}
     >
       <div
         className={`w-full relative max-w-[1140px] flex items-center ${
@@ -27,7 +25,7 @@ export const Navbar = ({
         }`}
       >
         <Link
-          className={centerLogo ? "absolute left-1/2 -translate-x-1/2" : ""}
+          className={centerLogo ? "h-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" : ""}
           href="/"
         >
           <Image width={105} height={36} src={siteData.logo} alt="" />
@@ -38,11 +36,13 @@ export const Navbar = ({
         >
           <Image src="/svg/hamburger-menu.svg" width={30} height={30} alt="" />
         </button>
-        <div className="hidden lg:block">
-          <NavItems hideCampaigns={hideCampaigns} />
-        </div>
+        {hideAll ? null : (
+          <div className="hidden lg:block">
+            <NavItems hideCampaigns={hideCampaigns} />
+          </div>
+        )}
       </div>
-      {isMenuOpen ? (
+      {!hideAll && isMenuOpen ? (
         <div className="flex w-full">
           <NavItems variant="mobile" hideCampaigns={hideCampaigns} />
         </div>

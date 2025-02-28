@@ -1,4 +1,5 @@
 "use client";
+import { siteData } from "@/lib/site.config";
 import { Bolt, Rocket, ShieldCheck } from "lucide-react";
 import React from "react";
 
@@ -40,7 +41,7 @@ export const Features = () => {
             <div className="flex flex-col">
               <span className="font-semibold">Trusted</span>
               <span>
-                Your donation is protected by the GoFundMe Giving Guarantee
+                {`Your donation is protected by the ${siteData.name} Giving Guarantee`}
               </span>
             </div>
           </div>

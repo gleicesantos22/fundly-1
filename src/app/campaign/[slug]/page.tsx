@@ -22,10 +22,9 @@ const FundraiserDetails = () => {
   }
 
   return (
-    <div className="flex flex-col items-center w-full">
-      {/* <Navbar />  */}
+    <div className="flex flex-col items-center w-full bg-white lg:bg-[#f9f9f9]">
       <Navbar hideCampaigns={true} />
-      <div className="w-full pt-32">
+      <div className="w-full pt-1 lg:pt-5">
         <div className="flex flex-col items-center px-4">
           <div className="py-4 pb-2 lg:hidden">
             <Image
@@ -36,17 +35,20 @@ const FundraiserDetails = () => {
               src={campaignDetails.image}
             />
           </div>
-          <div className="text-left">
+          <div className="text-left lg:p-5">
             <h1 className="text-3xl font-semibold">{campaignDetails.title}</h1>
           </div>
-          <div className="w-full border rounded-lg mt-1 mb-3 p-4 lg:hidden">
+          <div className="w-full border rounded-lg mt-2 mb-3 p-4 lg:hidden">
             <ProgressMeter
               goalAmount={campaignDetails.goal}
               raisedAmount={campaignDetails.raised}
             />
           </div>
-          <Link className="w-full" href={`/checkout/${campaignDetails.slug}`}>
-            <Button className="w-full bg-black text-white lg:hidden">
+          <Link
+            className="w-full lg:hidden"
+            href={`/checkout/${campaignDetails.slug}`}
+          >
+            <Button variant="primary" size="full">
               Donate now
             </Button>
           </Link>

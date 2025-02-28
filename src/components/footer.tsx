@@ -20,7 +20,7 @@ export const Footer = ({
             </div>
           )}
           <div className="flex flex-col gap-2.5 basis-full lg:basis-1/3">
-            <h4 className="text-[22px] font-semibold text-fundly-green">
+            <h4 className="text-[22px] font-semibold text-green-600">
               About Us
             </h4>
             <div className="grid grid-cols-2 gap-4 gap-x-10">
@@ -32,7 +32,7 @@ export const Footer = ({
             </div>
           </div>
           <div className="flex flex-col gap-2.5 basis-full lg:basis-1/3">
-            <h4 className="text-[22px] font-semibold text-fundly-green">
+            <h4 className="text-[22px] font-semibold text-green-600">
               Follow Us
             </h4>
             <div className="grid grid-cols-2 gap-4 gap-x-10">

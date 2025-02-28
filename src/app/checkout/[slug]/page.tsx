@@ -5,7 +5,6 @@ import { useParams } from "next/navigation";
 import { campaigns } from "@/lib/campaigns";
 import Link from "next/link";
 import { siteData } from "@/lib/site.config";
-// import { Features } from "@/components/fundraiser-page/features";
 import { Footer } from "@/components/footer";
 
 const donationAmounts = [
@@ -59,7 +58,7 @@ const Checkout = () => {
 
   return (
     <main className="bg-white lg:bg-[#f4f2ec] flex flex-col min-h-screen lg:min-h-fit">
-      <Navbar hideCampaigns={true} centerLogo={true} removeBlueBorder={true} />
+      <Navbar hideCampaigns={true} centerLogo={true} hideAll />
       <div className="flex justify-center w-full py-[86px] lg:py-40 pb-20 lg:pb-20">
         <div className="rounded-[2.5rem] px-4 py-0 lg:p-12 max-w-[700px] bg-white flex flex-col">
           <div className="flex flex-col">
@@ -116,7 +115,6 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      {/* <Features /> */}
       <div className="lg:hidden">
         <Footer hideSiteInfo />
       </div>
