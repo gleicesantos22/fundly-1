@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
+import { Button } from "@/components/ui/button";
 
 const navItemsVariants = cva(
   "flex gap-2 font-semibold text-lg text-secondary-text",
@@ -22,29 +23,33 @@ export const NavItems = ({
   return (
     <ul className={navItemsVariants({ variant })}>
       <li>
-        <Link
-          className="rounded-3xl p-4 py-2 hover:bg-[#e7eaed] transition-colors duration-300 ease-in w-full block"
-          href="/"
-        >
-          Home
+        <Link className="w-full block" href="/">
+          <Button
+            variant="primary"
+            className="hover:underline w-full lg:w-max bg-transparent shadow-none text-main-text"
+          >
+            Home
+          </Button>
         </Link>
       </li>
       {hideCampaigns ? null : (
         <li>
-          <Link
-            className="rounded-3xl p-4 py-2 hover:bg-[#e7eaed] transition-colors duration-300 ease-in w-full block"
-            href="#campaigns"
-          >
-            Campaigns
+          <Link className="w-full block" href="#campaigns">
+            <Button
+              variant="primary"
+              className="hover:underline w-full lg:w-max bg-transparent shadow-none text-main-text"
+            >
+              Campaigns
+            </Button>
           </Link>
         </li>
       )}
 
       <li>
-        <Link target="_blank" href="/login">
-          <button className="rounded-3xl p-4 py-1 bg-fundly-green border-2 border-fundly-green hover:bg-transparent transition-colors duration-300 ease-in w-full flex">
-            Log In
-          </button>
+        <Link className="w-full block" href="/login">
+          <Button variant="primary" className="hover:underline w-full lg:w-max">
+            Log in
+          </Button>
         </Link>
       </li>
     </ul>

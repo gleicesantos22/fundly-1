@@ -1,27 +1,47 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { HandHeart } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
-export const Organizer = () => {
+export const Organizer = ({
+  organizer,
+}: {
+  organizer: {
+    name: string;
+    avatar: string;
+    location: string;
+    contactPageLink: string;
+  };
+}) => {
   return (
-    <div className="border-y pb-8 pt-7 flex flex-col gap-2">
+    <div className="border-y lg:pl-5 pb-5 pt-3 flex flex-col gap-2">
       <h2 className="text-xl font-semibold">Organizer</h2>
 
-      <div className="flex gap-4 pt-7">
-        <Image
-          className="w-10 h-10 rounded-full"
-          src="https://images.gofundme.com/qHJ-ziLZSXPfibSDu1yCcsBZ8vo=/128x128/https://www.gofundme.com/person/profiles/df5fffa92b0f4cd4bbd825baa62d2738_edited_photo_1735957013454.jpeg"
-          width={40}
-          height={40}
-          alt=""
-        />
+      <div className="flex gap-4 pt-3">
+        {organizer.avatar ? (
+          <Image
+            className="w-10 h-10 rounded-full"
+            src={organizer.avatar}
+            width={40}
+            height={40}
+            alt=""
+          />
+        ) : (
+          <span className="rounded-full p-2 bg-[#f4f2ec] text-[#252525]">
+            <HandHeart width={24} height={24} />
+          </span>
+        )}
         <div className="flex flex-col gap-4">
           <div className="flex flex-col">
-            <h3 className="text-lg font-semibold">Jan Fiegert</h3>
+            <h3 className="text-lg font-semibold">{organizer.name}</h3>
             <p className="text-sm">Organizer</p>
-            <p className="text-sm">Cologne, Nordrhein-Westfalen</p>
+            <p className="text-sm">{organizer.location}</p>
           </div>
-          <Button variant="outline">Contact</Button>
+          <Link href={organizer.contactPageLink} className="block">
+            <Button variant="outline">Contact</Button>
+          </Link>
         </div>
       </div>
     </div>

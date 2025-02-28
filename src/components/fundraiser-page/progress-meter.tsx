@@ -1,3 +1,5 @@
+"use client";
+import { Progress } from "@/components/ui/progress";
 import React from "react";
 
 interface CircularProgressProps {
@@ -77,17 +79,55 @@ export const ProgressMeter = ({
   return (
     <div className="w-full flex items-center justify-between gap-5">
       <div className="flex-1">
-        <div className="font-bold text-lg mb-1.5">
+        <div className="mb-5">
+          <Progress value={+roundedPercentage} />
+        </div>
+        <div className="font-bold text-green-600 text-xl mb-1.5">
           <span>${raisedAmount.toLocaleString()}</span> raised
         </div>
-        <div className="text-sm text-gray-500">
+        <div className="text-base text-gray-500">
           ${goalAmount.toLocaleString()} goal
           <span className="mx-1">·</span>
           {donationCount.toLocaleString()} donations
         </div>
       </div>
-      <div className="flex-shrink-0">
-        <CircularProgress percentage={+roundedPercentage} />
+    </div>
+  );
+};
+
+export const ProgressMeterV2 = ({
+  raisedAmount,
+  goalAmount,
+}: {
+  raisedAmount: number;
+  goalAmount: number;
+}) => {
+  const donationCount = 2930;
+  const percentage = (raisedAmount / goalAmount) * 100;
+  const roundedPercentage = percentage.toFixed(1);
+
+  return (
+    <div className="w-full flex items-center justify-between gap-5">
+      <div className="flex-1">
+        <div className="mb-5">
+          <Progress value={+roundedPercentage} />
+        </div>
+        <div className="flex flex-col gap-3">
+          <div className="font-bold text-green-500 flex flex-col">
+            <span className="text-xl font-semibold text-main-text">Raised</span>
+            <span className="text-3xl">${raisedAmount.toLocaleString()}</span>
+          </div>
+          <div className="text-xl text-gray-500 flex flex-col">
+            <span className="text-main-text">Goal</span>
+            <span>${goalAmount.toLocaleString()}</span>
+            {/* <span className="mx-1">·</span> */}
+            {/* {donationCount.toLocaleString()} donations */}
+          </div>
+          <div className="text-xl text-gray-500 flex flex-col">
+            <span className="text-main-text">Donations</span>
+            <span>{donationCount.toLocaleString()}</span>
+          </div>
+        </div>
       </div>
     </div>
   );

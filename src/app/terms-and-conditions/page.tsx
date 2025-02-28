@@ -1,3 +1,4 @@
+"use client"
 import { Navbar } from "@/components/fundraiser-page/navbar";
 import { Footer } from "@/components/footer";
 

@@ -1,3 +1,4 @@
+"use client"
 import {
   Card,
   CardHeader,
@@ -8,12 +9,12 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/fundraiser-page/navbar";
+import { Navbar } from "@/components/navbar";
 
 export default function Login() {
   return (
     <main className="min-h-screen">
-      <Navbar />
+      <Navbar hideCampaigns={true} />
       <div className="w-full min-h-[calc(100vh-200px)] flex items-center justify-center px-4">
         <Card className="mx-auto max-w-sm">
           <CardHeader className="space-y-1">
