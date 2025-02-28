@@ -1,11 +1,12 @@
 "use client"
-import { Navbar } from "@/components/fundraiser-page/navbar";
+import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
 export default function PrivacyPolicy() {
   return (
     <main className="min-h-screen flex justify-center flex-col items-center">
-      <Navbar />
+            <Navbar hideCampaigns={true} />
+      
       <div className="w-full flex flex-col items-center container py-10 px-4">
         <h1 className="text-4xl mb-5">Privacy Policy</h1>
         <div className="flex flex-col gap-4">
