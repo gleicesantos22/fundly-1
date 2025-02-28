@@ -22,7 +22,7 @@ const FundraiserDetails = () => {
   }
 
   return (
-    <div className="flex flex-col items-center w-full bg-white lg:bg-[#f9f9f9]">
+    <div className="flex flex-col items-center w-full bg-white">
       <Navbar hideCampaigns={true} />
       <div className="w-full pt-1 lg:pt-5">
         <div className="flex flex-col items-center px-4">
