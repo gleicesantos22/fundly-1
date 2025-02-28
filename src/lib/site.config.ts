@@ -2,7 +2,7 @@ import { Facebook, Instagram, LucideMessageSquare } from "lucide-react";
 
 export const siteData = {
   name: "Fundly",
-  logo: "/images/logo.png",
+  logo: "/images/quickfundlogo.svg",
   description:
     "Fundly is dedicated to providing you with the tools you need to raise money for whatever your cause may be.",
   footerNavLinks: [
