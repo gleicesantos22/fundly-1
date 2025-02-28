@@ -39,7 +39,7 @@ export const Organizer = ({
             <p className="text-sm">Organizer</p>
             <p className="text-sm">{organizer.location}</p>
           </div>
-          <Link href={organizer.contactPageLink} className="block">
+          <Link href={organizer.contactPageLink}>
             <Button variant="outline">Contact</Button>
           </Link>
         </div>
