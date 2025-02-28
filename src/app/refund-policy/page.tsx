@@ -1,23 +1,23 @@
-"use client"
+"use client";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { siteData } from "@/lib/site.config";
 
 export default function RefundPolicy() {
   return (
     <main className="min-h-screen flex justify-center flex-col items-center">
-            <Navbar hideCampaigns={true} />
-      
+      <Navbar hideCampaigns={true} />
+
       <div className="w-full flex flex-col items-center container py-10 px-4">
         <h1 className="text-4xl mb-5">Refund Policy</h1>
         <div className="flex flex-col gap-4">
           <p>
-            <strong>Introduction.</strong> At [Your Company Name], we respect
-            your privacy and are committed to protecting your personal
-            information. This Privacy Policy outlines how we collect, use,
-            disclose, and protect your data when you use our services, including
-            our platform and any associated features. By using our services, you
-            agree to the collection and use of your data in accordance with this
-            policy.
+            <strong>Introduction.</strong> At {siteData.name}, we respect your
+            privacy and are committed to protecting your personal information.
+            This Privacy Policy outlines how we collect, use, disclose, and
+            protect your data when you use our services, including our platform
+            and any associated features. By using our services, you agree to the
+            collection and use of your data in accordance with this policy.
           </p>
 
           <p>

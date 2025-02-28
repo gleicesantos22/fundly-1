@@ -7,44 +7,7 @@ import Link from "next/link";
 import { siteData } from "@/lib/site.config";
 import { Footer } from "@/components/footer";
 
-const donationAmounts = [
-  {
-    donation: 25,
-    isSuggested: false,
-  },
-  {
-    donation: 50,
-    isSuggested: false,
-  },
-  {
-    donation: 100,
-    isSuggested: true,
-  },
-  {
-    donation: 300,
-    isSuggested: false,
-  },
-  {
-    donation: 500,
-    isSuggested: false,
-  },
-  {
-    donation: 750,
-    isSuggested: false,
-  },
-  {
-    donation: 1000,
-    isSuggested: false,
-  },
-  {
-    donation: 1500,
-    isSuggested: false,
-  },
-  {
-    donation: 2000,
-    isSuggested: false,
-  },
-];
+const donationAmounts = siteData.donationAmounts;
 
 const Checkout = () => {
   const params = useParams();
@@ -76,18 +39,17 @@ const Checkout = () => {
           <div className="w-full flex flex-col border-b py-4 gap-4">
             <span className="text-base font-semibold">Enter your donation</span>
             <div className="grid grid-cols-3 lg:flex lg:flex-wrap gap-3 pb-3">
-              {donationAmounts.map(({ donation, isSuggested }) => (
-                <button
-                  className="relative text-[#252525] rounded-xl w-[100px] lg:max-w-[90px] h-[56px] font-bold border border-[#c0bdb8] flex items-center justify-center"
-                  key={donation}
-                >
-                  {`$${donation}`}
-                  {isSuggested ? (
-                    <span className="bg-[#cef3bd] flex items-center gap-1 absolute -bottom-1 px-1 py-0.5 rounded-xl min-h-4 text-[0.625rem]">
-                      💚 SUGGESTED
-                    </span>
-                  ) : null}
-                </button>
+              {donationAmounts.map(({ donation, isSuggested, href }) => (
+                <Link key={donation} href={href} className="block">
+                  <button className="relative text-[#252525] rounded-xl w-[100px] lg:max-w-[90px] h-[56px] font-bold border border-[#c0bdb8] flex items-center justify-center">
+                    {`$${donation}`}
+                    {isSuggested ? (
+                      <span className="bg-[#cef3bd] flex items-center gap-1 absolute -bottom-1 px-1 py-0.5 rounded-xl min-h-4 text-[0.625rem]">
+                        💚 SUGGESTED
+                      </span>
+                    ) : null}
+                  </button>
+                </Link>
               ))}
             </div>
           </div>

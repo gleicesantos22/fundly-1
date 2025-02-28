@@ -1,6 +1,7 @@
 "use client"
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { siteData } from "@/lib/site.config";
 
 export default function PrivacyPolicy() {
   return (
@@ -17,7 +18,7 @@ export default function PrivacyPolicy() {
             <strong>1. Introduction</strong>
           </p>
           <p>
-            At JhonCare, we respect your privacy and are committed to protecting
+            At {siteData.name}, we respect your privacy and are committed to protecting
             your personal information. This Privacy Policy outlines how we
             collect, use, disclose, and protect your data when you use our
             services, including our platform and any associated features. By
@@ -231,7 +232,7 @@ export default function PrivacyPolicy() {
           </p>
           <ul>
             <li>
-              <strong>Email:</strong>&nbsp;contact@jhoncare.com
+              <strong>Email:</strong>&nbsp;contact@{siteData.name}.com
             </li>
             <li>
               <strong>Phone/Whatsapp:</strong>&nbsp;+5537998137833

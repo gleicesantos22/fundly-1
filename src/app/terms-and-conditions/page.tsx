@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { siteData } from "@/lib/site.config";
 
 export default function TermsAndConditions() {
   return (
@@ -17,11 +18,12 @@ export default function TermsAndConditions() {
           </p>
           <p>
             <strong>
-              Welcome to JhonCare! These Terms and Conditions govern your access
-              to and use of our website, products, services, and platform. By
-              accessing or using our services, you agree to comply with these
-              terms and conditions, and any applicable laws. If you do not agree
-              to these terms, please refrain from using our platform.
+              Welcome to {siteData.name}! These Terms and Conditions govern your
+              access to and use of our website, products, services, and
+              platform. By accessing or using our services, you agree to comply
+              with these terms and conditions, and any applicable laws. If you
+              do not agree to these terms, please refrain from using our
+              platform.
             </strong>
           </p>
           <p>
@@ -70,11 +72,11 @@ export default function TermsAndConditions() {
               To ensure that your cause is valid, you will need to schedule a
               meeting via&nbsp;WhatsApp
             </strong>
-            &nbsp;with the JhonCare team. During this meeting, we will discuss
-            the nature of your cause and assess if it meets our criteria for
-            approval. You must be available for this meeting and comply with all
-            requests from our team to proceed with your application. Failure to
-            schedule or attend this meeting may result in your request being
+            &nbsp;with the {siteData.name} team. During this meeting, we will
+            discuss the nature of your cause and assess if it meets our criteria
+            for approval. You must be available for this meeting and comply with
+            all requests from our team to proceed with your application. Failure
+            to schedule or attend this meeting may result in your request being
             denied.
           </p>
           <p>
@@ -113,9 +115,9 @@ export default function TermsAndConditions() {
             <strong>
               All content available on our platform, including text, graphics,
               logos, images, software, and other materials, is the property of
-              JhonCare or its licensors and is protected by copyright laws. You
-              may not copy, reproduce, or distribute any content from the
-              platform without prior written consent.
+              {siteData.name} or its licensors and is protected by copyright
+              laws. You may not copy, reproduce, or distribute any content from
+              the platform without prior written consent.
             </strong>
           </p>
           <p>
@@ -123,7 +125,7 @@ export default function TermsAndConditions() {
           </p>
           <p>
             <strong>
-              To the fullest extent permitted by law, JhonCare and its
+              To the fullest extent permitted by law, {siteData.name} and its
               affiliates are not liable for any indirect, incidental, special,
               or consequential damages arising out of your use or inability to
               use the platform. This includes, but is not limited to, damages
@@ -147,7 +149,8 @@ export default function TermsAndConditions() {
             <strong>10. Not a Crowdfunding or Donation Platform</strong>
           </p>
           <p>
-            <strong>JhonCare is not a&nbsp;crowdfunding</strong>&nbsp;or&nbsp;
+            <strong>{siteData.name} is not a&nbsp;crowdfunding</strong>
+            &nbsp;or&nbsp;
             <strong>donation platform</strong>. Our services are designed for
             individuals who require assistance with personal needs through&nbsp;
             <strong>commercial transactions</strong>&nbsp;that are not related
@@ -180,7 +183,7 @@ export default function TermsAndConditions() {
           </p>
           <ul>
             <li>
-              <strong>Email:</strong>&nbsp;contact@jhoncare.com
+              <strong>Email:</strong>&nbsp;contact@{siteData.name}.com
             </li>
             <li>
               <strong>Phone/Whatsapp:</strong>&nbsp;+5537998137833
