@@ -106,7 +106,7 @@ function CampaignCard({
           <span>{location}</span>
           <span>{category}</span>
         </div>
-        <Link href={`/campaign/${slug}`} target="_blank">
+        <Link href={`/campaign/${slug}`}>
           <button className="rounded-3xl p-4 py-1 mb-4 bg-fundly-green border-2 border-fundly-green hover:bg-transparent transition-colors duration-300 ease-in w-full flex justify-center text-[1.4rem]">
             DONATE
           </button>
