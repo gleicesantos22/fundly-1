@@ -9,7 +9,7 @@ export const campaigns = [
     date: "February 12th, 2025",
     category: "Business",
     organizer: {
-      name: "Markus Haintz",
+      name: "Monis",
       avatar:
         "https://images.gofundme.com/qHJ-ziLZSXPfibSDu1yCcsBZ8vo=/128x128/https://www.gofundme.com/person/profiles/df5fffa92b0f4cd4bbd825baa62d2738_edited_photo_1735957013454.jpeg",
       location: "Cologne, Nordrhein-Westfalen",
@@ -18,17 +18,17 @@ export const campaigns = [
     totalDonations: 333,
     totalRecentDonations: 45,
     recentDonation: {
-      name: "Max Mustermann",
+      name: "Rafael",
       amount: 100,
       avatar: null,
     },
     topDonation: {
-      name: "Max Mustermann",
+      name: "Ryan",
       amount: 500,
       avatar: null,
     },
     firstDonation: {
-      name: "Max Mustermann",
+      name: "Monis",
       amount: 100,
       avatar: null,
     },

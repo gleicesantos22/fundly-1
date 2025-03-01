@@ -13,7 +13,7 @@ export default {
         "fundly-green": "#91cb55",
         "main-text": "#3d231c",
         "secondary-text": "#3d231c",
-        footerBackground: "#343a40",
+        footerBackground: "#282828",
       },
     },
   },

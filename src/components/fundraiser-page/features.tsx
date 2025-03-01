@@ -5,7 +5,7 @@ import React from "react";
 
 export const Features = () => {
   return (
-    <div className="w-full bg-[#fbfaf8] flex justify-center px-4 mt-6">
+    <div className="w-full bg-transparent flex justify-center px-4 mt-6">
       <div className="container w-full flex flex-col text-base gap-10 py-10 pt-5">
         <p className="font-semibold">
           Your easy, powerful, and trusted home for help

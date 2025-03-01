@@ -20,7 +20,7 @@ export const Navbar = ({
       className={`z-50 sticky top-0 flex flex-col items-center w-full bg-white shadow p-5 px-2.5 md:px-0 min-h-[76px]`}
     >
       <div
-        className={`w-full relative max-w-[1140px] flex items-center ${
+        className={`w-full relative container flex items-center ${
           centerLogo ? "justify-end" : "justify-between"
         }`}
       >
@@ -28,7 +28,7 @@ export const Navbar = ({
           className={centerLogo ? "h-full absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" : ""}
           href="/"
         >
-          <Image width={105} height={36} src={siteData.logo} alt="" />
+          <Image width={140} height={40} src={siteData.logo} alt="" />
         </Link>
         <button
           onClick={() => setIsMenuOpen((isOpen) => !isOpen)}

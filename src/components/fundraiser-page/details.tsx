@@ -21,7 +21,7 @@ export const Details = ({
     : separatedName?.reduce((name, ac) => ac + name[0], "");
   return (
     <div className="flex gap-6 container mt-0 lg:mt-6">
-      <div className="bg-white rounded-2xl basis-full lg:basis-2/3 shadow-[0_.3125rem_1rem_-.1875rem_#0003]">
+      <div className="bg-white lg:rounded-2xl basis-full lg:basis-2/3 lg:shadow-[0_.3125rem_1rem_-.1875rem_#0003]">
         <Image
           className="rounded-t-2xl w-full hidden lg:block lg:mb-4"
           width={720}
