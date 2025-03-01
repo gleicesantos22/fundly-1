@@ -36,9 +36,6 @@ export const Causes = () => {
           <h2 className="text-3xl text-black font-semibold lg:text-4xl">
             {siteData.name} Helps
           </h2>
-          <span className="text-main-text text-base">
-            No onboarding fees. No hidden fees!
-          </span>
         </div>
         <div className="grid gap-3 lg:grid-cols-4 md:grid-cols-3">
           {allcauses.map((causeObj) => (
