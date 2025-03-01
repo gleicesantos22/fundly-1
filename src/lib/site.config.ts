@@ -18,14 +18,14 @@ export const siteData = {
     image: "/images/badge.svg",
   },
   // add a new image in public > images folder and use the file name below - if filename is xyz.jpg then put "/images/xyz.jpg"
-  heroImage: "/images/banner-min.jpg",
+  heroImage: "/images/banner.jpg",
 
-  heroTitle: "A Little Care Can Change the World",
+  heroTitle: "Start Your Quickfund Today",
 
   heroSubTitle:
-    "For Individuals and charities. No startup fees. No hidden fees.",
+    "",
 
-  heroCTAText: "Start a Fundraise!",
+  heroCTAText: "Create a Campaign",
 
   donationAmounts: [
     {

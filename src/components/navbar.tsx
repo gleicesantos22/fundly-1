@@ -9,10 +9,14 @@ export const Navbar = ({
   hideCampaigns,
   centerLogo = false,
   hideAll = false,
+  hideHome = false,
+  showContactUs = false
 }: {
   hideCampaigns?: boolean;
   centerLogo?: boolean;
   hideAll?: boolean;
+  hideHome?: boolean;
+  showContactUs?: boolean;
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
@@ -38,13 +42,13 @@ export const Navbar = ({
         </button>
         {hideAll ? null : (
           <div className="hidden lg:block">
-            <NavItems hideCampaigns={hideCampaigns} />
+            <NavItems showContactUs={showContactUs} hideHome={hideHome} hideCampaigns={hideCampaigns} />
           </div>
         )}
       </div>
       {!hideAll && isMenuOpen ? (
         <div className="flex w-full">
-          <NavItems variant="mobile" hideCampaigns={hideCampaigns} />
+          <NavItems showContactUs={showContactUs} hideHome={hideHome} variant="mobile" hideCampaigns={hideCampaigns} />
         </div>
       ) : null}
     </nav>

@@ -8,12 +8,12 @@ import React from "react";
 export const TrendingCampaigns = () => {
   return (
     <section
-      // id="campaigns"
-      className="scroll-pt-20 w-full flex justify-center bg-[#f4f4f4] py-[70px] text-main-text"
+      id="campaigns"
+      className="w-full flex justify-center bg-[#f4f4f4] pt-[60px] text-black"
     >
-      <div id="campaigns" className="w-full max-w-[1140px] flex flex-col">
+      <div className="w-full max-w-[1140px] flex flex-col">
         <div className="flex flex-col text-center items-center gap-4 lg:flex-row lg:justify-between">
-          <h5 className="text-5xl lg:text-[64px]">Trending Campaigns</h5>
+          <h5 className="text-3xl font-semibold  lg:text-4xl">Trending Campaigns</h5>
         </div>
         <div className="w-full grid md:grid-cols-3 pt-12 px-2 gap-7 lg:flex-row">
           {campaigns.map((campaign, idx) => (

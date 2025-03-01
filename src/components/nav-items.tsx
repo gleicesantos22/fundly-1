@@ -19,19 +19,39 @@ const navItemsVariants = cva(
 export const NavItems = ({
   variant = "default",
   hideCampaigns,
-}: VariantProps<typeof navItemsVariants> & { hideCampaigns?: boolean }) => {
+  hideHome = false,
+  showContactUs = false,
+}: VariantProps<typeof navItemsVariants> & {
+  hideCampaigns?: boolean;
+  hideHome?: boolean;
+  showContactUs?: boolean;
+}) => {
   return (
     <ul className={navItemsVariants({ variant })}>
-      <li>
-        <Link className="w-full block" href="/">
-          <Button
-            variant="primary"
-            className="hover:underline w-full lg:w-max bg-transparent shadow-none text-main-text"
-          >
-            Home
-          </Button>
-        </Link>
-      </li>
+      {hideHome ? (
+        <li>
+          <Link className="w-full block" href="/">
+            <Button
+              variant="primary"
+              className="hover:underline w-full lg:w-max bg-transparent shadow-none text-main-text"
+            >
+              Home
+            </Button>
+          </Link>
+        </li>
+      ) : null}
+      {showContactUs ? (
+        <li>
+          <Link className="w-full block" href="/">
+            <Button
+              variant="primary"
+              className="hover:underline w-full lg:w-max bg-transparent shadow-none text-main-text"
+            >
+              Contact Us
+            </Button>
+          </Link>
+        </li>
+      ) : null}
       {hideCampaigns ? null : (
         <li>
           <Link className="w-full block" href="#campaigns">

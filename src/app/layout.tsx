@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "Online Fundraising Websites To Raise Money For Anything",
   description:
     "Raise money and accept donations online with a FREE fundraising website! Over $300M donated online with Fundly. Get started  today with your crowdfunding page!",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

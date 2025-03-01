@@ -25,7 +25,7 @@ export const Footer = ({
             </h4>
             <div className="grid grid-cols-1 gap-3 gap-x-10">
               {siteData.footerNavLinks.map(({ text, href }) => (
-                <Link key={text} target="_blank" href={href}>
+                <Link key={text} href={href}>
                   {text}
                 </Link>
               ))}
@@ -36,7 +36,7 @@ export const Footer = ({
               {siteData.footerContactUs.title}
             </h4>
             <div className="grid grid-cols-1 gap-3 gap-x-10">
-              <Link target="_blank" href={siteData.footerContactUs.contactLink}>
+              <Link href={siteData.footerContactUs.contactLink}>
                 {siteData.footerContactUs.contactText}
               </Link>
               <div className="flex flex-col">
