@@ -11,11 +11,13 @@ export const TrendingCampaigns = () => {
       id="campaigns"
       className="w-full flex justify-center bg-[#f4f4f4] pt-[60px] text-black"
     >
-      <div className="w-full max-w-[1140px] flex flex-col">
-        <div className="flex flex-col text-center items-center gap-4 lg:flex-row lg:justify-between">
-          <h5 className="text-3xl font-semibold  lg:text-4xl">Trending Campaigns</h5>
+      <div className="w-full px-2 max-w-[1120px] flex flex-col">
+        <div className="flex text-left lg:justify-between">
+          <h5 className="text-3xl font-semibold  lg:text-4xl">
+            Trending Campaigns
+          </h5>
         </div>
-        <div className="w-full grid md:grid-cols-3 pt-12 px-2 gap-7 lg:flex-row">
+        <div className="w-full grid md:grid-cols-3 pt-12 lg:px-2 gap-7 lg:flex-row">
           {campaigns.map((campaign, idx) => (
             <CampaignCard
               key={campaign.title + idx}
@@ -25,7 +27,6 @@ export const TrendingCampaigns = () => {
           ))}
         </div>
       </div>
-      ˝
     </section>
   );
 };

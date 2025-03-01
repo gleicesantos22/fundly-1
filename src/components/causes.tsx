@@ -31,7 +31,7 @@ const allcauses = [
 export const Causes = () => {
   return (
     <section className="w-full flex justify-center py-[60px] bg-[#f4f4f4]">
-      <div className="flex container flex-col items-center">
+      <div className="flex flex-col max-w-[1120px] items-center w-full px-2 lg:px-0">
         <div className="mb-[30px] w-full flex flex-col gap-2">
           <h2 className="text-3xl text-black font-semibold lg:text-4xl">
             {siteData.name} Helps
