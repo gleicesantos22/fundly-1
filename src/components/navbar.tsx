@@ -22,6 +22,7 @@ export const Navbar = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  console.log({isOpen, showContactUs, hideHome, hideCampaigns})
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
