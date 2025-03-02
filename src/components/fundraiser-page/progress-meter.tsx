@@ -98,11 +98,12 @@ export const ProgressMeter = ({
 export const ProgressMeterV2 = ({
   raisedAmount,
   goalAmount,
+  donationCount
 }: {
   raisedAmount: number;
   goalAmount: number;
+  donationCount: number;
 }) => {
-  const donationCount = 2930;
   const percentage = (raisedAmount / goalAmount) * 100;
   const roundedPercentage = percentage.toFixed(1);
 

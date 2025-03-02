@@ -1,8 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { HandHeart } from "lucide-react";
+import { LucideUserCircle2 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export const Organizer = ({
@@ -19,7 +17,7 @@ export const Organizer = ({
     <div className="border-y lg:pl-5 pb-5 pt-3 flex flex-col gap-2">
       <h2 className="text-xl font-semibold">Organizer</h2>
 
-      <div className="flex gap-4 pt-3">
+      <div className="flex items-start gap-4 pt-3">
         {organizer.avatar ? (
           <Image
             className="w-10 h-10 rounded-full"
@@ -29,8 +27,8 @@ export const Organizer = ({
             alt=""
           />
         ) : (
-          <span className="rounded-full p-2 bg-[#f4f2ec] text-[#252525]">
-            <HandHeart width={24} height={24} />
+          <span className="h-10 w-10 rounded-full bg-[#f4f2ec] text-black flex items-center justify-center font-bold border">
+            <LucideUserCircle2 />
           </span>
         )}
         <div className="flex flex-col gap-4">
@@ -39,9 +37,9 @@ export const Organizer = ({
             <p className="text-sm">Organizer</p>
             <p className="text-sm">{organizer.location}</p>
           </div>
-          <Link href={organizer.contactPageLink}>
+          {/* <Link href={organizer.contactPageLink}>
             <Button variant="outline">Contact</Button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

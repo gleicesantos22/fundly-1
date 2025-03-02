@@ -1,11 +1,10 @@
 "use client";
 import { Description } from "@/components/fundraiser-page/description";
-import { Donations } from "@/components/fundraiser-page/donations";
 import { Organizer } from "@/components/fundraiser-page/organizer";
 import { ProgressMeterV2 } from "@/components/fundraiser-page/progress-meter";
 import { Button } from "@/components/ui/button";
 import { campaigns } from "@/lib/campaigns";
-import { ShieldCheck } from "lucide-react";
+import { LucideUserCircle2, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -15,10 +14,15 @@ export const Details = ({
 }: {
   campaignDetails: (typeof campaigns)[0];
 }) => {
-  const separatedName = campaignDetails.organizer.name.split(" ");
-  const initials = !separatedName?.length
-    ? "A"
-    : separatedName?.reduce((name, ac) => ac + name[0], "");
+  // const separatedName = campaignDetails.organizer.name.split(" ");
+  // // const initials = !separatedName?.length
+  //   ? "A"
+  //   : separatedName?.reduce((name, ac) => {
+  //       if (name[0]) {
+  //         ac += name[0];
+  //       }
+  //       return ac;
+  //     }, "");
   return (
     <div className="flex gap-6 container mt-0 lg:mt-6">
       <div className="bg-white lg:rounded-2xl basis-full lg:basis-2/3 lg:shadow-[0_.3125rem_1rem_-.1875rem_#0003]">
@@ -46,13 +50,13 @@ export const Details = ({
           </div>
         </div>
         <Description description={campaignDetails.description} />
-        <div className="flex flex-col gap-0 lg:gap-4 pt-6 border-t lg:hidden">
+        {/* <div className="flex flex-col gap-0 lg:gap-4 pt-6 border-t lg:hidden">
           <h2 className="text-xl font-semibold">
             Donations (
             <span className="underline">{campaignDetails.totalDonations}</span>)
           </h2>
           <Donations campaignDetails={campaignDetails} />
-        </div>
+        </div> */}
         <Organizer organizer={campaignDetails.organizer} />
 
         <div className="flex lg:pl-5 items-center gap-1 py-4">
@@ -65,6 +69,7 @@ export const Details = ({
         <div className="sticky top-24 w-full p-6 border bg-white rounded-2xl hidden shadow-[0_.3125rem_1rem_-.1875rem_#0003] lg:block">
           <div className="w-full mt-1 mb-0">
             <ProgressMeterV2
+              donationCount={campaignDetails.totalDonations}
               goalAmount={campaignDetails.goal}
               raisedAmount={campaignDetails.raised}
             />
@@ -86,8 +91,8 @@ export const Details = ({
                   src={campaignDetails.organizer.avatar}
                 />
               ) : (
-                <span className="h-10 w-10 rounded-full bg-green-500 flex items-center justify-center font-bold border text-white">
-                  {initials}
+                <span className="h-10 w-10 rounded-full bg-[#f4f2ec] text-black flex items-center justify-center font-bold border">
+                  <LucideUserCircle2 />
                 </span>
               )}
               <div className="inline-flex flex-col">

@@ -9,7 +9,7 @@ export const TrendingCampaigns = () => {
   return (
     <section
       id="campaigns"
-      className="w-full flex justify-center bg-[#f4f4f4] pt-[60px] text-black"
+      className="w-full flex justify-center scroll-mt-20 bg-[#f4f4f4] pt-[60px] text-black"
     >
       <div className="w-full px-2 max-w-[1120px] flex flex-col">
         <div className="flex text-left lg:justify-between">
@@ -55,16 +55,18 @@ function CampaignCard({
   const progress = Math.ceil((raised * 100) / goal);
   return (
     <Link href={`/campaign/${slug}`}>
-      <article className="p-3 flex flex-col gap-3 bg-white basis-full rounded-lg lg:basis-1/3 hover:shadow-[4px_4px_10px_0px_rgba(0,0,0,0.3)]">
+      <article className="p-3 flex flex-col justify-between gap-3 bg-white basis-full rounded-lg min-h-[330px] lg:basis-1/3 hover:shadow-[4px_4px_10px_0px_rgba(0,0,0,0.3)]">
         <div className="flex flex-col gap-2">
           <Image
-            className="rounded-lg"
+            className="rounded-lg aspect-16/9 h-[187px]"
             width={720}
             height={405}
             alt=""
             src={image}
           />
-          <h6 className="text-lg text-left font-semibold">{title}</h6>
+          <h6 className="text-lg text-left font-semibold min-h-[50px]">
+            {title}
+          </h6>
         </div>
         <div className="flex gap-2 flex-col">
           <div>
