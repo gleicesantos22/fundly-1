@@ -8,13 +8,28 @@ import { Label } from "@/components/ui/label";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Textarea } from "@/components/ui/textarea";
 import { Controller, useForm } from "react-hook-form";
-// import { siteData } from "@/lib/site.config";
+import { useState } from "react";
 
 export default function CreateAFundraiser() {
-  const { register, handleSubmit, control } = useForm();
+  const {
+    register,
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+
+  const [submissionMessage, setSubmissionMessage] = useState("");
 
   const onSubmit = (data) => {
+    // Basic validation (react-hook-form handles required)
+    if (errors.name || errors.email || errors.phone || errors.description) {
+      return; // Stop submission if there are errors.
+    }
+
     console.log(data);
+    setSubmissionMessage(
+      "Thank you for applying. We will reach out to you after 2-3 working days."
+    );
   };
 
   return (
@@ -35,9 +50,13 @@ export default function CreateAFundraiser() {
                     id="name"
                     placeholder="Enter your name"
                     type="text"
-                    required
                     {...register("name", { required: "Name is required" })}
                   />
+                  {errors.name && (
+                    <p className="text-red-500 text-sm">
+                      {errors.name.message.toString()}
+                    </p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
@@ -45,9 +64,19 @@ export default function CreateAFundraiser() {
                     id="email"
                     type="email"
                     placeholder="jhon@gmail.com"
-                    required
-                    {...register("email")}
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                        message: "Invalid email address",
+                      },
+                    })}
                   />
+                  {errors.email && (
+                    <p className="text-red-500 text-sm">
+                      {errors.email.message.toString()}
+                    </p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Phone</Label>
@@ -64,15 +93,26 @@ export default function CreateAFundraiser() {
                       />
                     )}
                   />
+                  {errors.phone && (
+                    <p className="text-red-500 text-sm">
+                      {errors.phone.message.toString()}
+                    </p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="description">Brief Description</Label>
                   <Textarea
                     id="description"
-                    required
                     placeholder="Tell us a little about why you are looking to raise funds"
-                    {...register("description")}
+                    {...register("description", {
+                      required: "Description is required",
+                    })}
                   />
+                  {errors.description && (
+                    <p className="text-red-500 text-sm">
+                      {errors.description.message.toString()}
+                    </p>
+                  )}
                 </div>
                 <Button
                   className="bg-green-600 w-full text-white"
@@ -80,6 +120,9 @@ export default function CreateAFundraiser() {
                 >
                   Submit
                 </Button>
+                {submissionMessage && (
+                  <p className="text-green-600 mt-4">{submissionMessage}</p>
+                )}
               </form>
             </CardContent>
           </Card>
