@@ -11,7 +11,7 @@ export const siteData = {
   ],
   footerContactUs: {
     title: "Contact us",
-    contactLink: "https://google.com",
+    contactLink: "/contact-us",
     contactText: "Click here to contact us",
     availabilityDays: "Monday to Friday",
     availabilityTime: "From 9:30 to 17:00 EST",

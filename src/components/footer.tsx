@@ -21,7 +21,7 @@ export const Footer = ({
           )}
           <div className="flex flex-col gap-2.5 basis-full lg:basis-1/4">
             <h4 className="text-[22px] font-semibold text-green-600">
-              About Us
+              Our Policies
             </h4>
             <div className="grid grid-cols-1 gap-3 gap-x-10">
               {siteData.footerNavLinks.map(({ text, href }) => (

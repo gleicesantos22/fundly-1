@@ -1,7 +1,7 @@
 "use client";
 import { siteData } from "@/lib/site.config";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import React from "react";
 
 const allcauses = [
@@ -50,16 +50,16 @@ export const Causes = () => {
 function Cause({
   name,
   image,
-  href,
+  // href,
 }: {
   name: string;
   image: string;
   href: string;
 }) {
   return (
-    <Link
-      href={href}
-      className="flex flex-col items-center rounded-xl hover:bg-[#fff] hover:shadow-[0_.3125rem_1rem_-.1875rem_#0003] p-[15px]"
+    <div
+      // href={href}
+      className="flex flex-col items-center rounded-xl p-[15px]"
     >
       <Image
         width={200}
@@ -69,6 +69,6 @@ function Cause({
         src={image}
       />
       <h3 className="text-xl text-black">{name}</h3>
-    </Link>
+    </div>
   );
 }

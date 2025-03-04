@@ -12,7 +12,7 @@ export const Hero = () => {
           background: `url('${siteData.heroImage}')`,
           backgroundPosition: "center",
           backgroundSize: "cover",
-          backgroundRepeat: "no-repeat"
+          backgroundRepeat: "no-repeat",
         }}
         className="w-full h-5/6"
       >
@@ -20,7 +20,7 @@ export const Hero = () => {
           <h1 className="mt-5 text-4xl font-semibold md:text-6xl lg:px-5">
             {siteData.heroTitle}
           </h1>
-          <Link className="block" href="#">
+          <Link className="block" href="/create-a-fundraiser">
             <Button
               className="py-2 px-2 text-xl block md:px-10 md:text-4xl text-white"
               variant={"primary"}

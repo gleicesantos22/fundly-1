@@ -14,7 +14,7 @@ import { Navbar } from "@/components/navbar";
 export default function Login() {
   return (
     <main className="min-h-screen">
-      <Navbar hideCampaigns={true} />
+      <Navbar hideCampaigns hidePolicies hideLogin />
       <div className="w-full min-h-[calc(100vh-200px)] flex items-center justify-center px-4">
         <Card className="mx-auto max-w-sm">
           <CardHeader className="space-y-1">
@@ -38,7 +38,7 @@ export default function Login() {
                 <Label htmlFor="password">Password</Label>
                 <Input id="password" type="password" required />
               </div>
-              <Button className="bg-black w-full text-white" type="submit">
+              <Button className="bg-green-600 w-full text-white" type="submit">
                 Login
               </Button>
             </div>

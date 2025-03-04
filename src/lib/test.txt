@@ -1,0 +1,307 @@
+<Elements stripe={stripePromise}>
+            <form className="border-y py-5 w-full flex flex-col gap-5">
+              <span className="text-base font-semibold">Payment details</span>
+              <div className="p-4 w-full border border-[#e5e1d7] rounded-xl flex flex-col gap-5">
+                <div>
+                  <label
+                    htmlFor="option-one"
+                    className="cursor-pointer flex items-center gap-4"
+                  >
+                    <RadioGroup defaultValue="option-one">
+                      <div className="flex items-center gap-4">
+                        <RadioGroupItem value="option-one" id="option-one" />
+                        <CreditCard />
+                        <span>Credit card</span>
+                      </div>
+                    </RadioGroup>
+                  </label>
+                </div>
+
+                <div className="rounded-xl border px-4 py-2 cursor-text">
+                  <div className="pt-4 relative grow">
+                    <input
+                      id="email"
+                      type="email"
+                      className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                      {...register("email")}
+                    />
+                    <label
+                      className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                        watch("email")
+                          ? "absolute top-2 text-xs"
+                          : "absolute top-1/2"
+                      } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                      htmlFor="email"
+                    >
+                      Email address
+                    </label>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border px-4 py-2 cursor-text">
+                  <div className="pt-4 relative grow">
+                    <input
+                      id="name"
+                      type="text"
+                      className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                      {...register("name")}
+                    />
+                    <label
+                      className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                        watch("name")
+                          ? "absolute top-2 text-xs"
+                          : "absolute top-1/2"
+                      } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                      htmlFor="name"
+                    >
+                      Name
+                    </label>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border px-4 py-2 cursor-text">
+                  <div className="pt-4 relative grow">
+                    <input
+                      id="surName"
+                      type="text"
+                      className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                      {...register("surName")}
+                    />
+                    <label
+                      className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                        watch("surName")
+                          ? "absolute top-2 text-xs"
+                          : "absolute top-1/2"
+                      } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                      htmlFor="surName"
+                    >
+                      Surname
+                    </label>
+                  </div>
+                </div>
+
+                <Controller
+                  control={formMethods.control}
+                  name="useDonorName"
+                  render={({ field: { onChange, value } }) => (
+                    <div className="flex items-center gap-4">
+                      <Checkbox
+                        id="useDonorName"
+                        checked={value}
+                        onCheckedChange={() => {
+                          if (!value) {
+                            formMethods.setValue(
+                              "cardName",
+                              watch("name") && watch("surName")
+                                ? `${watch("name")} ${watch("surName")}`
+                                : ""
+                            );
+                          } else {
+                            formMethods.setValue("cardName", "");
+                          }
+                          onChange(!value);
+                        }}
+                      />
+                      <label
+                        htmlFor="useDonorName"
+                        className="peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                      >
+                        Use as billing name
+                      </label>
+                    </div>
+                  )}
+                />
+
+                {/* <div className="rounded-xl border px-4 py-2 cursor-text">
+                <div className="pt-4 relative grow">
+                  <input
+                    id="card"
+                    type="number"
+                    className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                  />
+                  <label
+                    className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                      watch("country") ? "absolute top-2 text-xs" : "absolute top-1/2"
+                    } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                    htmlFor="card"
+                  >
+                    Card number
+                  </label>
+                </div>
+              </div> */}
+
+                {/* <Controller
+                control={formMethods.control}
+                name="cardNumber"
+                render={({ field: { onChange, value } }) => (
+                  <div className="rounded-xl border px-4 py-2 cursor-text">
+                    <div className="pt-4 relative grow">
+                      <input
+                        ref={inputRef}
+                        id="cardNumber"
+                        type="tel" // Use 'tel' for better mobile keyboard
+                        className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                        onChange={(e) => handleInputChange(e, onChange)}
+                        maxLength={19} // Standard card number length with hyphens
+                        aria-label="Card number"
+                        aria-describedby="card-description"
+                        value={value}
+                      />
+                      <label
+                        className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                          watch("cardNumber")
+                            ? "absolute top-2 text-xs"
+                            : "absolute top-1/2"
+                        } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                        htmlFor="cardNumber"
+                      >
+                        Card number
+                      </label>
+                      <div id="card-description" className="sr-only">
+                        Enter your 16-digit card number, separated by hyphens.
+                      </div>
+                    </div>
+                  </div>
+                )}
+              /> */}
+
+                <CardElement />
+
+                <div className="flex justify-between items-center gap-4">
+                  <div className="rounded-xl border px-4 py-2 cursor-text basis-1/2">
+                    <div className="pt-4 relative grow">
+                      <input
+                        id="expiry"
+                        type="text"
+                        className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                      />
+                      <label
+                        className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                          watch("expiry")
+                            ? "absolute top-2 text-xs"
+                            : "absolute top-1/2"
+                        } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                        htmlFor="expiry"
+                      >
+                        MM / YY
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border px-4 py-2 cursor-text basis-1/2">
+                    <div className="pt-4 relative grow">
+                      <input
+                        id="cvv"
+                        type="text"
+                        className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                        {...register("cvv")}
+                      />
+                      <label
+                        className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                          watch("cvv")
+                            ? "absolute top-2 text-xs"
+                            : "absolute top-1/2"
+                        } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                        htmlFor="cvv"
+                      >
+                        CVV
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-xl border px-4 py-2 cursor-text">
+                  <div className="pt-4 relative grow">
+                    <input
+                      id="cardName"
+                      type="text"
+                      className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                      {...register("cardName")}
+                    />
+                    <label
+                      className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                        watch("cardName")
+                          ? "absolute top-2 text-xs"
+                          : "absolute top-1/2"
+                      } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                      htmlFor="cardName"
+                    >
+                      Name on card
+                    </label>
+                  </div>
+                </div>
+
+                {/* <div className="rounded-xl border">
+                <select name="" id="">
+                  {countries.map((country) => (
+                    <option key={country.label}>{country.label}</option>
+                  ))}
+                </select>
+              </div> */}
+
+                <div className="flex flex-col lg:flex-row gap-4">
+                  <div className="rounded-xl border px-4 py-2 cursor-text basis-full lg:basis-1/2">
+                    <div className="pt-4 relative grow">
+                      {/* <input
+                    id="cardName"
+                    type="text"
+                    className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                  /> */}
+                      <select
+                        className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                        name=""
+                        id="country"
+                        {...register("country")}
+                      >
+                        {countries.map((country) => (
+                          <option key={country.label}>{country.label}</option>
+                        ))}
+                      </select>
+                      <label
+                        className={`text-[#6f6f6f] transition-all cursor-text absolute -translate-y-1/2 left-0 top-2 text-xs peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                        htmlFor="country"
+                      >
+                        Country
+                      </label>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border px-4 py-2 cursor-text basis-full lg:basis-1/2">
+                    <div className="pt-4 relative grow">
+                      <input
+                        id="zip"
+                        type="text"
+                        className="w-full p-0 outline-none border-none bg-transparent leading-6 appearance-none peer"
+                        {...register("zip")}
+                      />
+                      <label
+                        className={`text-[#6f6f6f] transition-all cursor-text -translate-y-1/2 left-0 ${
+                          watch("zip")
+                            ? "absolute top-2 text-xs"
+                            : "absolute top-1/2"
+                        } peer-focus:top-2 peer-focus:text-xs peer-focus:font-medium peer-focus:duration-200 peer-focus:ease-in-out`}
+                        htmlFor="zip"
+                      >
+                        Postal code
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-5">
+                <span className="text-base font-semibold">Your donation</span>
+                <div className="flex justify-between border-b pb-5">
+                  <span>Your donation</span>
+                  <span>{`$${selectedAmount}`}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Total due today</span>
+                  <span>{`$${selectedAmount}`}</span>
+                </div>
+                <Button variant="primary" size="full">
+                  Donate now
+                </Button>
+              </div>
+            </form>
+          </Elements>
