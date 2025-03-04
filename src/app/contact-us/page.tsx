@@ -12,7 +12,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
-import { redirect } from "next/navigation";
 import { useState } from "react";
 
 export default function ContactUs() {
@@ -29,11 +28,6 @@ export default function ContactUs() {
     setSubmissionMessage(
       "Thank you for contacting us. We will reach out to you soon!"
     );
-
-    // Redirect to home page after a short delay
-    setTimeout(() => {
-      redirect("/");
-    }, 2000);
   };
 
   return (
