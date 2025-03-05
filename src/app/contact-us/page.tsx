@@ -32,7 +32,7 @@ export default function ContactUs() {
 
   return (
     <main className="min-h-screen flex justify-center flex-col items-center">
-      <Navbar />
+      <Navbar hideCampaigns />
       <div className="w-full flex flex-col items-center container py-10 px-4">
         <h1 className="text-4xl mb-5">Contact Us</h1>
         <div className="w-full">

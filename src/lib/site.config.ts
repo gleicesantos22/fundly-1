@@ -18,7 +18,7 @@ export const siteData = {
     image: "/images/badge.svg",
   },
   // add a new image in public > images folder and use the file name below - if filename is xyz.jpg then put "/images/xyz.jpg"
-  heroImage: "/images/banner.jpg",
+  heroImage: "/images/banner.webp",
 
   heroTitle: "Start Your Quickfund Today",
 
@@ -31,56 +31,38 @@ export const siteData = {
     {
       donation: 25,
       isSuggested: false,
-      // add stripe link
-      href: "#",
     },
     {
       donation: 50,
       isSuggested: false,
-      // add stripe link
-      href: "#",
     },
     {
       donation: 100,
       isSuggested: true,
-      // add stripe link
-      href: "#",
     },
     {
       donation: 300,
       isSuggested: false,
-      // add stripe link
-      href: "#",
     },
     {
       donation: 500,
       isSuggested: false,
-      // add stripe link
-      href: "#",
     },
     {
       donation: 750,
       isSuggested: false,
-      // add stripe link
-      href: "#",
     },
     {
       donation: 1000,
       isSuggested: false,
-      // add stripe link
-      href: "#",
     },
     {
       donation: 1500,
       isSuggested: false,
-      // add stripe link
-      href: "#",
     },
     {
       donation: 2000,
       isSuggested: false,
-      // add stripe link
-      href: "#",
     },
   ],
 };

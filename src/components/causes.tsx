@@ -1,30 +1,29 @@
 "use client";
 import { siteData } from "@/lib/site.config";
 import Image from "next/image";
-// import Link from "next/link";
 import React from "react";
 
 const allcauses = [
   {
     href: "#",
     name: "Personal & Milestones",
-    image: "https://fundly.com/content/images/icon_vertical_club.svg",
+    image: "/svg/club.svg",
   },
   {
     href: "#",
     name: "Community Relief",
-    image: "https://fundly.com/content/images/icon_vertical_%20disaster.svg",
+    image: "/svg/disaster.svg",
   },
   {
     href: "#",
     name: "Schools & Education",
-    image: "https://fundly.com/content/images/icon_vertical_%20school.svg",
+    image: "/svg/school.svg",
   },
 
   {
     href: "#",
     name: "Trips & Adventure",
-    image: "https://fundly.com/content/images/icon_vertical_%20trips.svg",
+    image: "/svg/trips.svg",
   },
 ];
 

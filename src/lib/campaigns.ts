@@ -5,7 +5,7 @@ export const campaigns = [
     title: "Help Celebrate Maria's 72nd Birthday with a Seaside Escape",
     goal: 10000,
     raised: 2875,
-    image: "/images/maria.jpg",
+    image: "/images/maria.webp",
     date: "February 12th, 2025",
     category: "Personal",
     organizer: {
@@ -63,7 +63,7 @@ Thank you for considering a donation to help us make Maria’s dream come true. 
     title: "Favour Seeds: Planting for Progress",
     goal: 50000,
     raised: 35972,
-    image: "/images/2.jpg",
+    image: "/images/2.webp",
     date: "January 1st, 2025",
     category: "Community",
     organizer: {
@@ -118,7 +118,7 @@ Thank you for considering joining me on this transformative journey. With your h
     title: "Help Apollo",
     goal: 3000,
     raised: 150,
-    image: "/images/apollo.jpg",
+    image: "/images/apollo.webp",
     date: "March 2nd, 2025",
     category: "Personal",
     organizer: {
