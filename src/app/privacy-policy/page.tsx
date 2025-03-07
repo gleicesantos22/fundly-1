@@ -232,8 +232,7 @@ export default function PrivacyPolicy() {
           </p>
           <ul>
             <li>
-              <strong>Email:</strong>&nbsp;contact@{siteData.name}.com
-            </li>
+              <strong>Email:</strong>&nbsp;contact@QuickFund.com</li>
             <li>
               <strong>Phone/Whatsapp:</strong>&nbsp;+5537998137833
             </li>
