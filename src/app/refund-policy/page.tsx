@@ -300,10 +300,7 @@ export default function RefundPolicy() {
 
           <ul>
             <li>
-              <strong>Email:</strong> contact@jhoncare.com
-            </li>
-            <li>
-              <strong>Phone/Whatsapp:</strong> +5537998137833
+              <strong>Email:</strong> contact@quickfund.co
             </li>
           </ul>
         </div>
